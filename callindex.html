@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+
+<!-- Basic Page Needs
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Inquire</title>
+		<meta name="description" content="A Collection of Page Transitions with CSS Animations" />
+		<meta name="keywords" content="page transition, css animation, website, effect, css3, jquery" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+
+<!-- CSS
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<link rel="stylesheet" type="text/css" href="css/default.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css" />
+		<link rel="stylesheet" type="text/css" href="css/skeleton.css" />
+
+<!-- FONT
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+	  <script src="https://use.fontawesome.com/b1ea2d65a4.js"></script>
+
+		<script src="js/modernizr.custom.js"></script>
+	</head>
+
+
+	<body>
+
+<!-- Header
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<div class="container" style="">
+			<div class="row">
+				<div class="one-half column" style="margin-top: 7%">
+					<img src="images/logo.png" style="height: 50px;"></img>
+				</div>
+			</div>
+		</div>
+
+
+<!-- Begin of Moving Pages
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<div id="pt-main" class="pt-perspective">
+
+			<!-- Begin Page 1 -->
+			<div class="pt-page pt-page-1">
+				<div class="container">
+					<div class="row">
+						<div class="one-half column" style="margin-top: 20%">
+							<h2 style="font-family: 'Montserrat', sans-serif; font-weight:700; font-size:20px;">You are calling to find out about...</h2>
+							<h4 id="qry" style="font-family: 'Open Sans', sans-serif; font-weight:500; font-size:40px;"></h4>
+							<hr>
+							<a href="index.html">Change your question<a/>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<!-- End of Page 1 -->
+
+			<!-- Begin Page 2 -->
+			<div class="pt-page pt-page-2">
+				<div class="container">
+					<div class="row">
+						<div class="one-half column" style="margin-top: 32%">
+							<h4 style="font-family: 'Open Sans', sans-serif; font-weight:300; font-size:16px;">Whether you are traveling to New York or New Delhi,
+								the ones who know their city the best are the locals. <br><hr><span style="font-family: 'Montserrat', sans-serif; font-weight:500; font-size:20px;">
+								Inquire lets you tap into the locals of the world by calling the most
+								knowledgeable person who can answer your question about their city or neighborhood.</span></h4>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Page 2 -->
+
+		</div>
+		<!-- End of Moving Pages -->
+
+		<!-- Update Broswer -->
+		<div class="pt-message">
+			<p>Your browser does not support CSS animations.</p>
+		</div>
+
+
+<!-- Triggers and Buttons
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<div class="pt-triggers">
+			<div class="container" style="">
+				<div id="dl-menu">
+					<ul class="dl-menu">
+						<div class="nav">
+								<a href="#"><button id="upOne" onclick="writeUp()" class="icon" style="width:97%;"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
+								<a href="#"><button id="upDown" onclick="myFunction()" class="icon" style="width:97%;"><i class="fa fa-minus" aria-hidden="true"></i></a></li>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- /triggers -->
+
+<!-- Scripts
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+		<!-- Firebase -->
+		<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
+		<script>
+		// Initialize Firebase
+		var config = {
+		apiKey: "AIzaSyAihPn6D_BsSJjl-gi_tf42pH2El7PknY4",
+		authDomain: "inquire-79218.firebaseapp.com",
+		databaseURL: "https://inquire-79218.firebaseio.com",
+		storageBucket: "",
+		};
+		firebase.initializeApp(config);
+		</script>
+		<script src="js/app.js"></script>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/jquery.dlmenu.js"></script>
+		<script src="js/pagetransitions.js"></script>
+
+<!-- End
+–––––––––––––––––––––––––––––––––––––––––––––––––– -->
+	</body>
+</html>
