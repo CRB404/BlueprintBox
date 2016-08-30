@@ -7,11 +7,11 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Inquire</title>
-		<meta name="description" content="A Collection of Page Transitions with CSS Animations" />
-		<meta name="keywords" content="page transition, css animation, website, effect, css3, jquery" />
-		<meta name="author" content="Codrops" />
-		<link rel="shortcut icon" href="../favicon.ico">
+		<title>Dispatch</title>
+		<meta name="description" content="A prototype page for an autonomous box" />
+		<meta name="keywords" content="CoLab, IoT, blockchain, internet of things" />
+		<meta name="author" content="CoLab" />
+		<!-- <link rel="shortcut icon" href="../favicon.ico"> -->
 
 <!-- CSS
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -22,8 +22,7 @@
 
 <!-- FONT
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-		<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+		<link href="https://fonts.googleapis.com/css?family=Montserrat+Alternates:700|PT+Sans+Caption" rel="stylesheet">
 	  <script src="https://use.fontawesome.com/b1ea2d65a4.js"></script>
 
 		<script src="js/modernizr.custom.js"></script>
@@ -36,12 +35,16 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 		<div class="container" style="">
 			<div class="row">
-				<div class="one-half column" style="margin-top: 7%">
-					<img src="images/logo.png" style="height: 50px;"></img>
+				<div class="twelve column" style="margin-top: 7%;">
+
+					<!-- * Need a new image * -->
+
+					<img src="images/logo.png" style="height: 30px; display: block; margin-left: auto; margin-right: auto;"></img>
 				</div>
 			</div>
 		</div>
 
+		<hr style="color: #f05b53; background-color: #f05b53; height: 3px;">
 
 <!-- Begin of Moving Pages
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -51,15 +54,31 @@
 			<div class="pt-page pt-page-1">
 				<div class="container">
 					<div class="row">
-						<div class="one-half column" style="margin-top: 20%">
-							<h2 style="font-family: 'Montserrat', sans-serif; font-weight:700; font-size:20px;">You are calling to find out about...</h2>
-							<h4 id="qry" style="font-family: 'Open Sans', sans-serif; font-weight:500; font-size:40px;"></h4>
-							<hr>
-							<a href="index.html">Change your question<a/>
+						<div class="twelve column" style="margin-top: 2%;">
+							<h4 style="font-family: 'PT Sans Caption', sans-serif; font-weight:700; font-size:20px; text-align: center; color: #231f20;">The box needs you to correct it's position!</h4>
+							<br>
+							<ul>
+								<li style="display: inline;"><h4 id="lossValue" style="font-family: 'Circular', sans-serif; font-size:160px; text-align: center; color: #f05b53;"></h4></li>
+								<li style="display: inline;"><h4 style="font-family: 'PT Sans Caption', sans-serif; font-size:20px; text-align: center; color: #231f20;">You are losing money!</h4></li>
+							</ul>
 						</div>
 					</div>
 				</div>
 
+
+				<!-- Search bar -->
+				<div class="container">
+					<!-- <div class="row">
+						<div class="box">
+							<div class="container-4">
+								<input type="text" id="search" placeholder="do things here" value=""/>
+								<a href="callindex.html">
+									<button class="icon" onclick="writeUserData()"><i class="fa fa-search" style="vertical-align: left;"></i></button>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div> -->
 			</div>
 			<!-- End of Page 1 -->
 
@@ -67,11 +86,8 @@
 			<div class="pt-page pt-page-2">
 				<div class="container">
 					<div class="row">
-						<div class="one-half column" style="margin-top: 32%">
-							<h4 style="font-family: 'Open Sans', sans-serif; font-weight:300; font-size:16px;">Whether you are traveling to New York or New Delhi,
-								the ones who know their city the best are the locals. <br><hr><span style="font-family: 'Montserrat', sans-serif; font-weight:500; font-size:20px;">
-								Inquire lets you tap into the locals of the world by calling the most
-								knowledgeable person who can answer your question about their city or neighborhood.</span></h4>
+						<div class="one-half column" style="margin-top: 20%">
+							<h4 style="font-family: 'PT Sans Caption', sans-serif; font-weight:300; font-size:16px;">Dispatch is a thing yay!</h4>
 						</div>
 					</div>
 				</div>
@@ -94,8 +110,8 @@
 				<div id="dl-menu">
 					<ul class="dl-menu">
 						<div class="nav">
-								<a href="#"><button id="upOne" onclick="writeUp()" class="icon" style="width:97%;"><i class="fa fa-plus" aria-hidden="true"></i></a></li>
-								<a href="#"><button id="upDown" onclick="myFunction()" class="icon" style="width:97%;"><i class="fa fa-minus" aria-hidden="true"></i></a></li>
+								<!-- <li data-animation="1"><a href="#"><button class="icon"><i class="fa fa-phone" aria-hidden="true"></i></a></li>
+								<li data-animation="2"><a href="#"><button class="icon"><i class="fa fa-question" aria-hidden="true"></i></a></li> -->
 						</div>
 					</ul>
 				</div>
@@ -109,14 +125,14 @@
 		<!-- Firebase -->
 		<script src="https://www.gstatic.com/firebasejs/3.2.1/firebase.js"></script>
 		<script>
-		// Initialize Firebase
-		var config = {
-		apiKey: "AIzaSyAihPn6D_BsSJjl-gi_tf42pH2El7PknY4",
-		authDomain: "inquire-79218.firebaseapp.com",
-		databaseURL: "https://inquire-79218.firebaseio.com",
-		storageBucket: "",
-		};
-		firebase.initializeApp(config);
+		  // Initialize Firebase
+		  var config = {
+		    apiKey: "AIzaSyCuQDJbFeHCRV9tooWKClXcmKNysiZ1dQ0",
+		    authDomain: "smartcontract-render.firebaseapp.com",
+		    databaseURL: "https://smartcontract-render.firebaseio.com",
+		    storageBucket: "smartcontract-render.appspot.com",
+		  };
+		  firebase.initializeApp(config);
 		</script>
 		<script src="js/app.js"></script>
 

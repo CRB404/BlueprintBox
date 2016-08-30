@@ -33,7 +33,6 @@
 .container {
   position: relative;
   width: 100%;
-  max-width: 960px;
   margin: 0 auto;
   padding: 0 20px;
   box-sizing: border-box; }
@@ -384,13 +383,27 @@ hr {
 /* Background */
 body {
   height: 60%;
-  background: linear-gradient(15deg, #fff, #fff);
+  background: #1E1833;
   /*background: #F05B53;*/
 }
 
+/* Header Font */
 h4 {
-  color: #f05b53;
+  font-family: 'Cera Light', sans-serif;
+  font-size:20px;
+  text-align: center;
+  color: #231f20;
+  letter-spacing: 2px;
 }
+
+/* Main Alert Font */
+h1 {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-size: 200px;
+  text-align: center;
+}
+
 /* Search Bar
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .box{
@@ -530,8 +543,8 @@ li {
 /* Circles
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 @font-face {
-    font-family: 'Circular'; /*a name to be used later*/
-    src: url('../fonts/ARCfont.ttf'); /*URL to font*/
+    font-family: 'Cera Light'; /*a name to be used later*/
+    src: url('../fonts/Cera GR Light.otf'); /*URL to font*/
 }
 
 /* Clearing
