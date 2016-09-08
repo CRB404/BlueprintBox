@@ -15,6 +15,7 @@
 
 <!-- CSS
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/default.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<link rel="stylesheet" type="text/css" href="css/animations.css" />
@@ -72,11 +73,40 @@
 				<div class="container">
 					<div class="row">
 						<h2 style="color:#fff;">Strawberries Accept</h2>
-						<button onClick="App.advance()">
+						<button onClick="App.advanceToTrasit()">
 					</div>
 				</div>
 			</div>
 			<!-- End Strawberries Accept-->
+
+			<!-- Begin Strawberries Map-->
+			<div id="sMap">
+				<div class="container">
+					<div class="row">
+						<h2 style="color:#fff;">Strawberries Map</h2>
+						<button onClick="App.advance()">
+
+							<!-- Modal-->
+							<div class="modal fade" id="sAlert1" role="dialog">
+								<div class="modal-dialog">
+									<!-- Modal content-->
+									<div class="modal-content">
+										<div class="modal-header">
+											<h4 class="modal-title">Alert!</h4>
+										</div>
+										<div class="modal-body">
+										</div>
+										<div class="modal-footer">
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- End Modal-->
+
+					</div>
+				</div>
+			</div>
+			<!-- End Strawberries Map-->
 
 			<!-- Begin Strawberries Email Input-->
 			<div id="sEmail">
@@ -137,7 +167,9 @@
 		  };
 		  firebase.initializeApp(config);
 		</script>
+
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		<script src="js/jquery.dlmenu.js"></script>
 		<script src="js/pagetransitions.js"></script>
 		<script src="js/app.js"></script>
