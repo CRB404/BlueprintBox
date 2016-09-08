@@ -21,6 +21,7 @@
       });
   }
 
+  // App helpers and initializers
   function hideAllStates() {
     $("[id^=s]").css({ "display": "none" })
   }
@@ -29,14 +30,8 @@
     $("#" + state).css({ "display": "block" })
   }
 
-  // Exposed
-  function advanceState() {
-    // hide the current view
-    $("#" + currentState).css({ "display": "none" })
-    // increment the index and set the new state
-    currentIdx++;
-    currentState = APP_STATES[currentIdx];
-    showState(currentState);
+  function hideState(state) {
+    $("#" + state).css({ "display": "none" })
   }
 
   function setState(state) {
@@ -49,6 +44,19 @@
     currentState = APP_STATES[INITIAL_STATE_IDX];
   }
 
+  function initializeApp() {
+    resetState()
+    setState(currentState)
+  }
+
+  // APIs
+  function advanceState() {
+    hideState(currentState)
+    currentIdx++;
+    currentState = APP_STATES[currentIdx];
+    showState(currentState);
+  }
+
   function complete() {
     // log to firebase
     // do some other stuff
@@ -58,17 +66,13 @@
     }, 3000)
   }
 
-  // Internal init functions
-  function initializeApp() {
-    resetState()
-    setState(currentState)
-  }
-  initializeApp()
-
-  // explicitly place this on the window
+  // Expose the APIs
   window.App = {
     advance: advanceState,
     complete: complete
   }
+
+  // Init the app
+  initializeApp()
 
 })(jQuery)
