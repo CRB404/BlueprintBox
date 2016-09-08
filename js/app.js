@@ -1,93 +1,74 @@
-var variable = firebase.database().ref('query');
-var lossVal = firebase.database().ref();
+(function($) {
 
-// Graph Array
+  var APP_STATES = ['sHook','sContext','sAccept','sEmail'];
+  var INITIAL_STATE_IDX = 0
 
-// var graphs = [
-//   'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p',
-//   'q','r','s','t','u','v','w','x','y','z',
-//
-//   'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P',
-//   'Q','R','S','T','U','V','W','X','Y'
-// ]
+  var currentState = null
+  var currentIdx = null
 
-var graphs = [
-  'Y','X','W','V','U','T','S','R','Q','P','O','N','M','L','K','J',
-  'I','H','G','F','E','D','C','B','A',
+  var variable = firebase.database().ref('emails');
 
-  'z','y','x','w','v','u','t','s','r','q','p','o','n','m','l','k',
-  'j','i','h','g','f','e','d','c','b','a',' '
-]
+  // Input Email Function
+  // _____________________________________________________________________________
 
-// Bounty and Graph Function
-// _____________________________________________________________________________
+  function writeUserData() {
+    variable.push({ val: document.getElementById("search").value })
+      .then(function() {
+        console.log('Synchronization succeeded');
+      })
+      .catch(function(error) {
+        console.log('Synchronization failed');
+      });
+  }
 
-// OnLoad Update Bounty and Graph
+  function hideAllStates() {
+    $("[id^=s]").css({ "display": "none" })
+  }
 
-lossVal.once("value")
-  .then(function(snapshot) {
-    var name = snapshot.child('penalty').val(); // {loss value}
+  function showState(state) {
+    $("#" + state).css({ "display": "block" })
+  }
 
-    var graphsDisplay = name - 1;
+  // Exposed
+  function advanceState() {
+    // hide the current view
+    $("#" + currentState).css({ "display": "none" })
+    // increment the index and set the new state
+    currentIdx++;
+    currentState = APP_STATES[currentIdx];
+    showState(currentState);
+  }
 
-    var circles = graphs[graphsDisplay]
+  function setState(state) {
+    hideAllStates()
+    showState(state)
+  }
 
-    document.getElementById("lossValue").innerHTML=circles;
-  });
+  function resetState() {
+    currentIdx = INITIAL_STATE_IDX
+    currentState = APP_STATES[INITIAL_STATE_IDX];
+  }
 
-// Auto-Update Bounty and Graph
+  function complete() {
+    // log to firebase
+    // do some other stuff
+    setTimeout(function() {
+      console.log('I am done!')
+      initializeApp()
+    }, 3000)
+  }
 
-lossVal.on('child_changed', function(data) {
-  // var lossName = data.child("/val").val();
-  console.log("New Value " + data.val());
+  // Internal init functions
+  function initializeApp() {
+    resetState()
+    setState(currentState)
+  }
+  initializeApp()
 
-  // working with zero index so subtract one
-  var graphsDisplay = data.val() - 1;
+  // explicitly place this on the window
+  window.App = {
+    advance: advanceState,
+    complete: complete
+  }
 
-  var circles = graphs[graphsDisplay]
-
-  document.getElementById("lossValue").innerHTML=circles;
-
-  // lossName.onChange = function() {
-  //   document.getElementById("lossValue").innerHTML=lossName;
-  //   console.log(lossName);
-  // }
-});
-
-
-// function writeUp() {
-//   lossVal.set( + 1)
-//     .then(function() {
-//       console.log('Synchronization succeeded');
-//     })
-//     .catch(function(error) {
-//       console.log('Synchronization failed');
-//     });
-// }
-//
-
-
-// Search Function
-// _____________________________________________________________________________
-
-function writeUserData() {
-  variable.set({ val: document.getElementById("search").value })
-    .then(function() {
-      console.log('Synchronization succeeded');
-    })
-    .catch(function(error) {
-      console.log('Synchronization failed');
-    });
-}
-
-
-// window.onload = function() {
-//   firebase.database().ref('query/val').once('value').then(function(snapshot) {
-//     var Value = snapshot.val();
-//     document.getElementById("qry").innerHTML=Value;
-//     // ...
-//   });
-//        //when the document is finished loading, replace everything
-//        //between the <a ...> </a> tags with the value of splitText
-//
-// }
+})(jQuery)
