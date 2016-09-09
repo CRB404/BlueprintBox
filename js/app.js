@@ -6,20 +6,8 @@
   var currentState = null
   var currentIdx = null
 
-  var capture = firebase.database().ref('emails');
+  var emailCapture = firebase.database().ref('emails/strawberries');
 
-// Input Email Function
-// _____________________________________________________________________________
-
-  function writeUserData() {
-    capture.push({ val: document.getElementById("search").value })
-      .then(function() {
-        console.log('Synchronization succeeded');
-      })
-      .catch(function(error) {
-        console.log('Synchronization failed');
-      });
-  }
 
 // Div Id Renderer | "Page Routing"
 // _____________________________________________________________________________
@@ -96,12 +84,21 @@
   }
 
   function complete() {
-    // log to firebase
-    // do some other stuff
+    // Capture email
+    emailCapture.push({ val: document.getElementById("emailInput").value })
+      .then(function() {
+        console.log('Synchronization succeeded');
+      })
+      .catch(function(error) {
+        console.log('Synchronization failed');
+      });
+
+    // Increment to track position
+
     setTimeout(function() {
       console.log('I am done!')
       initializeApp()
-    }, 3000)
+    }, 2000)
   }
 
   // Expose the APIs
