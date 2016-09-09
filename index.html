@@ -33,12 +33,16 @@
 
 <!-- Header
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-		<div class="container" style="width: 100%; background-color: #F3F3F3;">
+		<div class="container" style="width: 100%; height:35px;background-color: #F3F3F3;">
 			<div class="row">
-				<div class="twelve column" style="margin-top: 3%;">
+				<div class="twelve column" style="">
 					<ul>
-						<li><button onClick="App.quit()"></li>
-						<li><h4>DISPATCH</h4></li>
+						<li style="margin-right: 19.5%; height: 30px;">
+							<button onClick="App.quit()" style="border-color:transparent; padding:0 10px; padding-left:14px; height:30px; margin-top: 2%;">
+								<i class="fa fa-times fa-2x" style="padding-bottom:5px:" aria-hidden="true"></i>
+							</button>
+						</li>
+						<li><h4 style="margin-top: 4%;">DISPATCH</h4></li>
 					</ul>
 				</div>
 			</div>
@@ -49,44 +53,56 @@
 –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
 			<!-- Begin Strawberries Hook-->
-			<div id="sHook">
+			<div class="appPage" id="sHook">
 				<div class="container">
+					<div class="row" id="contentContainer" style="margin-top:15%;">
+						<h1>$3</h1>
+						<h2 style="font-size: 35px;">REWARD</h2>
+					</div>
+				</div>
+				<div class="container" id="foot">
 					<div class="row">
-						<h2 style="color:#fff;">Strawberries Hook</h2>
-						<button onClick="App.advance()">
+						<button class="next" onClick="App.advance()">
 					</div>
 				</div>
 			</div>
 			<!-- End Strawberries Hook-->
 
 			<!-- Begin Strawberries Context-->
-			<div id="sContext">
+			<div class="appPage" id="sContext">
 				<div class="container">
-					<div class="row">
+					<div class="row" id="contentContainer">
 						<h2 style="color:#fff;">Strawberries Context</h2>
-						<button onClick="App.advance()">
+					</div>
+				</div>
+				<div class="container" id="foot">
+					<div class="row">
+						<button class="next" onClick="App.advance()">
 					</div>
 				</div>
 			</div>
 			<!-- End Strawberries Context-->
 
 			<!-- Begin Strawberries Accept-->
-			<div id="sAccept">
+			<div class="appPage" id="sAccept">
 				<div class="container">
-					<div class="row">
+					<div class="row" id="contentContainer">
 						<h2 style="color:#fff;">Strawberries Accept</h2>
-						<button onClick="App.advanceToTrasit()">
+					</div>
+				</div>
+				<div class="container" id="foot">
+					<div class="row">
+						<button class="next" onClick="App.advanceToTrasit()">
 					</div>
 				</div>
 			</div>
 			<!-- End Strawberries Accept-->
 
 			<!-- Begin Strawberries Map-->
-			<div id="sMap">
+			<div class="appPage" id="sMap">
 				<div class="container">
-					<div class="row">
+					<div class="row" id="contentContainer">
 						<h2 style="color:#fff;">Strawberries Map</h2>
-						<button onClick="App.advance()">
 
 							<!-- Modal1-->
 							<div class="modal fade" id="Alert1" role="dialog">
@@ -124,42 +140,59 @@
 
 					</div>
 				</div>
+				<div class="container" id="foot">
+					<div class="row">
+						<button class="next" onClick="App.advance()">
+					</div>
+				</div>
 			</div>
 			<!-- End Strawberries Map-->
 
 			<!-- Begin Strawberries Arrival-->
-			<div id="sArrive">
+			<div class="appPage" id="sArrive">
 				<div class="container">
-					<div class="row">
+					<div class="row" id="contentContainer">
 						<h2 style="color:#fff;">Strawberries Arrival</h2>
-						<button onClick="App.advance()">
+					</div>
+				</div>
+				<div class="container" id="foot">
+					<div class="row">
+						<button class="next" onClick="App.advance()">
 					</div>
 				</div>
 			</div>
 			<!-- End Strawberries Arrival-->
 
 			<!-- Begin Strawberries So What-->
-			<div id="sSoWhat">
+			<div class="appPage" id="sSoWhat">
 				<div class="container">
-					<div class="row">
+					<div class="row" id="contentContainer">
 						<h2 style="color:#fff;">Strawberries So What?</h2>
-						<button onClick="App.advance()">
+					</div>
+				</div>
+				<div class="container" id="foot">
+					<div class="row">
+						<button class="next" onClick="App.advance()">
 					</div>
 				</div>
 			</div>
 			<!-- End Strawberries So What-->
 
 			<!-- Begin Strawberries Email Input-->
-			<div id="sEmail">
+			<div class="appPage" id="sEmail">
 				<div class="container">
-					<div class="row">
+					<div class="row" id="contentContainer">
 						<h2 style="color:#fff;">Strawberries Email Input</h2>
 						<div class="box">
 							<div class="container-4" style="height:auto;">
 								<input type="text" id="emailInput" style="display: block;" placeholder="do things here" value=""/>
 							</div>
 						</div>
-						<button onClick="App.complete()">Submit</button>
+					</div>
+				</div>
+				<div class="container" id="foot">
+					<div class="row">
+						<button class="next" onClick="App.complete()">
 					</div>
 				</div>
 			</div>
