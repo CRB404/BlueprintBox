@@ -1,6 +1,6 @@
 (function($) {
 
-  var APP_STATES = ['sHook','sContext','sAccept','sMap','sAlert1','sEmail'];
+  var APP_STATES = ['sHook','sContext','sAccept','sMap','sArrive','sSoWhat','sEmail'];
   var INITIAL_STATE_IDX = 0
 
   var currentState = null
@@ -52,15 +52,27 @@
     setState(currentState)
   }
 
-  function runTimedModal() {
+  function runTimedModals() {
     setTimeout(function() {
-      console.log('Modal is running')
-      $('#sAlert1').modal('show');
+      console.log('Modal 1 is running')
+      $('#Alert1').modal('show');
+
       setTimeout(function() {
-        console.log('Modal closes')
-        $('#sAlert1').modal('hide');
-      }, 6000)
-    }, 10000)
+        console.log('Modal 1 closes')
+        $('#Alert1').modal('hide');
+
+        setTimeout(function() {
+          console.log('Modal 2 is running')
+          $('#Alert2').modal('show');
+
+          setTimeout(function() {
+            console.log('Modal 2 closes')
+            $('#Alert2').modal('hide');
+
+          }, 5000)
+        }, 5000)
+      }, 5000)
+    }, 7000)
   }
 
   // APIs
@@ -76,7 +88,11 @@
     currentIdx++;
     currentState = APP_STATES[currentIdx];
     showState(currentState);
-    runTimedModal();
+    runTimedModals();
+  }
+
+  function emergencyExit() {
+    location.reload();
   }
 
   function complete() {
@@ -92,6 +108,7 @@
   window.App = {
     advance: advanceState,
     advanceToTrasit: advanceToTransitState,
+    quit:emergencyExit,
     complete: complete
   }
 

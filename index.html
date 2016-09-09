@@ -36,7 +36,10 @@
 		<div class="container" style="width: 100%; background-color: #F3F3F3;">
 			<div class="row">
 				<div class="twelve column" style="margin-top: 3%;">
-					<h4>DISPATCH</h4>
+					<ul>
+						<li><button onClick="App.quit()"></li>
+						<li><h4>DISPATCH</h4></li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -86,13 +89,13 @@
 						<h2 style="color:#fff;">Strawberries Map</h2>
 						<button onClick="App.advance()">
 
-							<!-- Modal-->
-							<div class="modal fade" id="sAlert1" role="dialog">
+							<!-- Modal1-->
+							<div class="modal fade" id="Alert1" role="dialog">
 								<div class="modal-dialog">
 									<!-- Modal content-->
 									<div class="modal-content">
 										<div class="modal-header">
-											<h4 class="modal-title">Alert!</h4>
+											<h4 class="modal-title">Alert 1!</h4>
 										</div>
 										<div class="modal-body">
 										</div>
@@ -101,12 +104,51 @@
 									</div>
 								</div>
 							</div>
-							<!-- End Modal-->
+							<!-- End Modal1-->
+
+							<!-- Modal2-->
+							<div class="modal fade" id="Alert2" role="dialog">
+								<div class="modal-dialog">
+									<!-- Modal content-->
+									<div class="modal-content">
+										<div class="modal-header">
+											<h4 class="modal-title">Alert 2!</h4>
+										</div>
+										<div class="modal-body">
+										</div>
+										<div class="modal-footer">
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- End Modal2-->
 
 					</div>
 				</div>
 			</div>
 			<!-- End Strawberries Map-->
+
+			<!-- Begin Strawberries Arrival-->
+			<div id="sArrive">
+				<div class="container">
+					<div class="row">
+						<h2 style="color:#fff;">Strawberries Arrival</h2>
+						<button onClick="App.advance()">
+					</div>
+				</div>
+			</div>
+			<!-- End Strawberries Arrival-->
+
+			<!-- Begin Strawberries So What-->
+			<div id="sSoWhat">
+				<div class="container">
+					<div class="row">
+						<h2 style="color:#fff;">Strawberries So What?</h2>
+						<button onClick="App.advance()">
+					</div>
+				</div>
+			</div>
+			<!-- End Strawberries So What-->
 
 			<!-- Begin Strawberries Email Input-->
 			<div id="sEmail">

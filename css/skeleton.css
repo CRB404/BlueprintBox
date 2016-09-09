@@ -289,7 +289,10 @@ label > .label-body {
 /* Lists
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 ul {
-  list-style: circle inside; }
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; }
 ol {
   list-style: decimal inside; }
 ol, ul {
@@ -302,7 +305,9 @@ ol ul {
   margin: 1.5rem 0 1.5rem 3rem;
   font-size: 90%; }
 li {
-  margin-bottom: 1rem; }
+  display:inline-block;
+  float: left;
+ }
 
 
 /* Code
@@ -502,7 +507,7 @@ ul {
 
 li {
   display: inline;
-  margin-right: 3px;
+  margin-right: 13%;
 }
 
 .nav button.icon{
