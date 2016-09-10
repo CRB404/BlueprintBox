@@ -378,11 +378,6 @@ form {
 
 /* Misc
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-hr {
-  margin-top: 3rem;
-  margin-bottom: 3.5rem;
-  border-width: 0;
-  border-top: 1px solid #E1E1E1; }
 
 /* Background */
 body {
@@ -592,9 +587,21 @@ there.
 }
 
 .next {
+  /*Button style*/
   display: block;
   margin: auto;
   width: 91%;
+  margin-bottom: 15px;
+  background: #6065FF;
+  border: transparent;
+
+  /*Button font*/
+  font-family: 'Cera Light', sans-serif;
+  font-size:20px;
+  text-align: center;
+  color: #fff;
+  letter-spacing: 2px;
+
 }
 
 .row#contentContainer {
@@ -616,8 +623,10 @@ h4 {
 h3 {
   color: #fff;
   font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
   font-size: 20px;
-  text-align: center;
+  text-align: left;
+  letter-spacing: .5px;
 }
 
 /* Primus Font */
@@ -626,7 +635,6 @@ h2 {
   font-family: 'Helvetica Neue', sans-serif;
   font-weight: bold;
   font-size: 20px;
-  text-align: center;
   letter-spacing: 1px;
 }
 
@@ -638,6 +646,11 @@ h1 {
   text-align: center;
 }
 
+hr {
+  margin-top: 3rem;
+  margin-bottom: 3.5rem;
+  border-width: 0;
+  border-top: 1px solid #312D59; }
 
 [id^=s] {
   display: none;
