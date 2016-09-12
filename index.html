@@ -109,9 +109,13 @@
 
 			<!-- Begin Strawberries Map-->
 			<div class="appPage" id="sMap">
+				<img src="images/Map.jpg" style="width:100%; margin-bottom:4.5%;">
 				<div class="container">
 					<div class="row" id="contentContainer">
-						<h2 style="color:#fff;">Strawberries Map</h2>
+						<hr>
+						<h2 style="">Remember, we are going to the shelf marked <span id="destinationMap" style="color:#6065FF;"></span>.</h2>
+						<hr>
+						<h2 style="margin-top:10%;">If there are problems I'll notify you.</h2>
 
 							<!-- Modal1-->
 							<div class="modal fade" id="Alert1" role="dialog">
@@ -123,8 +127,7 @@
 										</div>
 										<div class="modal-body">
 										</div>
-										<div class="modal-footer">
-										</div>
+										<!-- Modal content End-->
 									</div>
 								</div>
 							</div>
@@ -140,8 +143,7 @@
 										</div>
 										<div class="modal-body">
 										</div>
-										<div class="modal-footer">
-										</div>
+										<!-- Modal content End-->
 									</div>
 								</div>
 							</div>
@@ -151,7 +153,7 @@
 				</div>
 				<div class="container" id="foot">
 					<div class="row">
-						<button class="next" onClick="App.advance()">
+						<button class="next" onClick="App.advance()">WE MADE IT!</button>
 					</div>
 				</div>
 			</div>
@@ -162,6 +164,8 @@
 				<div class="container">
 					<div class="row" id="contentContainer">
 						<h2 style="margin-top:30%;">We made it! Thank you!</h2>
+						<hr>
+						<h2 style="margin-top:10%;">You earned <span style="color:#6065FF;">$2</span></h2>
 						<hr>
 						<h2 style="margin-top:10%;">You have just taken a first step into a world of semi-autonomous smart agents.</h2>
 					</div>
@@ -178,14 +182,14 @@
 			<div class="appPage" id="sSoWhat">
 				<div class="container">
 					<div class="row" id="contentContainer">
-						<h2 style="margin-top:30%;">A <span style="color:#6065FF;">semi-autonomous</span> smart agent can make decisions.</h2>
+						<h2 style="margin-top:30%;">A <span style="color:#6065FF;">semi-autonomous</span> smart agent is a networked node that can make decisions.</h2>
 						<hr>
-						<h2 style="margin-top:10%;">It can also transact based on the quality of fulfilling those actions.</h2>
+						<h2 style="margin-top:10%;">It manifests it decisions by transacting with the world.</h2>
 					</div>
 				</div>
 				<div class="container" id="foot">
 					<div class="row">
-						<button class="next" onClick="App.advance()">
+						<button class="next" onClick="App.advance()">PAYOUT</button>
 					</div>
 				</div>
 			</div>
@@ -195,17 +199,18 @@
 			<div class="appPage" id="sEmail">
 				<div class="container">
 					<div class="row" id="contentContainer">
-						<h2 style="color:#fff;">Strawberries Email Input</h2>
+						<h2 style="margin-top:30%;">Please give us your <span style="color:#6065FF;">email</span> so that we can semd you payment.</h2>
+						<hr>\
 						<div class="box">
 							<div class="container-4" style="height:auto;">
-								<input type="text" id="emailInput" style="display: block;" placeholder="do things here" value=""/>
+								<input type="text" id="emailInput" style="display: block;" placeholder="Email" value=""/>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="container" id="foot">
 					<div class="row">
-						<button class="next" onClick="App.complete()">
+						<button class="next" onClick="App.complete()">FINISH</button>
 					</div>
 				</div>
 			</div>

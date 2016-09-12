@@ -89,6 +89,7 @@
       var Value = snapshot.val();
       loc = Value;
       document.getElementById("destination").innerHTML=loc;
+      document.getElementById("destinationMap").innerHTML=loc;
       console.log('Start location is ' + loc);
     });
   }
